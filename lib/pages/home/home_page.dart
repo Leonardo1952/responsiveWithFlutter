@@ -4,14 +4,16 @@ import 'package:interface_responsiva/pages/home/widgets/app_bar/mobile_app_bar.d
 import 'package:interface_responsiva/pages/home/widgets/app_bar/web_app_bar.dart';
 import 'package:interface_responsiva/pages/home/widgets/sections/top_section.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+import 'widgets/sections/advantages_section.dart';
+import 'widgets/sections/courses_section.dart';
 
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
+          backgroundColor: Colors.black,
           appBar: constraints.maxWidth < mobileBreakPoint
               ? PreferredSize(
                   child: MobileAppBar(),
@@ -27,6 +29,8 @@ class HomePage extends StatelessWidget {
                 child: ListView(
                   children: [
                     TopSection(),
+                    AdvantagesSection(),
+                    CoursesSection(),
                   ],
                 ),
               )),

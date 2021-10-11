@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class WebAppBarResponsiveContent extends StatelessWidget {
-  const WebAppBarResponsiveContent({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Expanded(

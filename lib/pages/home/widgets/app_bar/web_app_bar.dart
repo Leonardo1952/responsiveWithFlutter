@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:interface_responsiva/pages/home/widgets/app_bar/web_app_bar_responsive_content.dart';
 
 class WebAppBar extends StatelessWidget {
-  const WebAppBar({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return AppBar(

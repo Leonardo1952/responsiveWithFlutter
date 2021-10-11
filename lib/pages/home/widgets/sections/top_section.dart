@@ -8,8 +8,7 @@ class TopSection extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final maxWidth = constraints.maxWidth;
-
-        if (maxWidth >= 1200)
+        if (maxWidth >= tabletBreakPoint)
           return AspectRatio(
             aspectRatio: 3.2,
             child: Stack(
@@ -109,7 +108,40 @@ class TopSection extends StatelessWidget {
             ),
           );
         }
-        return Container();
+        return Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 3.4,
+              child: Image.network(
+                'https://images.pexels.com/photos/892757/pexels-photo-892757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Aprenda Flutter no seu tempo',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Bora aprender Flutter com o professor Leonardo! Cursos por apenas R\$22,90. Qualidade garantida.',
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                  const SizedBox(height: 16),
+                  CustomSearchField(),
+                ],
+              ),
+            )
+          ],
+        );
       },
     );
   }
